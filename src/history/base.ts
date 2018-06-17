@@ -1,19 +1,34 @@
-import {pushState, go} from '../utils/historySwitch'
+import History from '../abstracts/history'
+import {pushState} from "../utils/historySwitch";
+import InitConfig from "../utils/initConfig";
+import HashRouter from "./hash";
+import HistoryRouter from "./history";
 
-export default class History {
-    protected push(state: object = {}, path: string = undefined): void {
+export default abstract class BaseHistory extends History {
+    config: InitConfig
+    abstract router: HashRouter | HistoryRouter
+
+    constructor(config: InitConfig) {
+        super();
+
+        this.config = config
+
+        this.initEvent()
+    }
+
+    push(state: object, path: string) {
         pushState(state, path)
-    }
+    };
 
-    protected go(step: number): void {
-        go(step)
-    }
-
-    protected foward(): void {
+    forward(): void {
         this.go(+1)
     }
 
-    protected back(): void {
+    go(step: number): void {
+        history.go(step)
+    }
+
+    back(): void {
         this.go(-1)
     }
 }

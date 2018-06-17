@@ -1,6 +1,6 @@
 import TRouter from './core'
 
-const THistory = new TRouter({
+window.THistory = new TRouter({
     type: 'history',
     routes: [{
         path: '/home',
@@ -24,5 +24,3 @@ const THistory = new TRouter({
         }
     }]
 })
-
-console.log(THistory)

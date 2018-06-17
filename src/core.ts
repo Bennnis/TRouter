@@ -2,7 +2,7 @@ import HistoryRouter from './history/history'
 import HashRouter from './history/hash'
 import InitConfig from './utils/initConfig'
 
-class TRouter {
+export default class TRouter {
     history: HashRouter | HistoryRouter
     config: InitConfig
 
@@ -15,9 +15,9 @@ class TRouter {
     private initHistory() {
         switch (this.config.type) {
             case 'history':
-                return new HistoryRouter()
+                return new HistoryRouter(this.config)
             default:
-                return new HashRouter()
+                return new HashRouter(this.config)
         }
     }
 }

@@ -1,4 +1,4 @@
 export default class InitConfig {
     type: 'history' | 'hash'
-    routes: Array<object>
+    routes: Array<any>
 }
