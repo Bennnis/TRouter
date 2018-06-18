@@ -12,4 +12,6 @@ export default abstract class History {
     protected abstract initEvent(): void
 
     protected abstract initRouter(): void
+
+    protected abstract initPage(): void
 }

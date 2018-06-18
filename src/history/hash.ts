@@ -8,13 +8,14 @@ class HashRouter extends BaseRouter{
         super(config)
     }
 
-    protected handleRouterChange(state: object): void {
-    }
-
     protected initEvent(): void {
+        window.onhashchange = (e: any) => {
+            this.handleRouterChange(e.state)
+        }
     }
 
     protected initRouter(): void {
+        this.router = this
     }
 }
 

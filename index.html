@@ -7,16 +7,16 @@
 
 <body>
 <script src="./dist/bundle.js"></script>
-
 <button onclick='changeH("/home")'>home</button>
 <button onclick='changeH("/category")'>category</button>
 <button onclick='changeH("/page")'>page</button>
 
 <div id="router-view"></div>
 </body>
+
 <script>
 	function changeH(path) {
-        THistory.history.push({'name': 'humengtao'}, path)
+        THistory.push({'name': 'humengtao'}, path)
 	}
 </script>
 

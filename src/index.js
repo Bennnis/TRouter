@@ -1,8 +1,14 @@
 import TRouter from './core'
 
 window.THistory = new TRouter({
-    type: 'history',
+    type: 'hash',
     routes: [{
+        path: '/',
+        render: () => {
+            document.getElementById('router-view').innerHTML = 'Haha Page'
+            console.log('render init')
+        }
+    },{
         path: '/home',
         render: () => {
             document.getElementById('router-view').innerHTML = 'Home Page'
@@ -23,4 +29,4 @@ window.THistory = new TRouter({
             console.log('render category')
         }
     }]
-})
+}).history
