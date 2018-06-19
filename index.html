@@ -6,23 +6,18 @@
 </head>
 
 <body>
+<script src="./dist/bundle.js"></script>
+<button onclick='changeH("/home")'>home</button>
+<button onclick='changeH("/category")'>category</button>
+<button onclick='changeH("/page")'>page</button>
 
-    <script src="./src/utils/pushState.js"></script>
-    <script src="./src/history.js"></script>
-    <script src="./src/core.js"></script>
-    <script src="./src/index.js"></script>
-
-    <button onclick='changeH("/home")'>home</button>
-    <button onclick='changeH("/category")'>category</button>
-    <button onclick='changeH("/page")'>page</button>
-
-    <div id="router-view"></div>
-    <script>
-        function changeH(path) {
-            console.log(THistory)
-            THistory.push(path, {state: path})
-        }
-    </script>
+<div id="router-view"></div>
 </body>
+
+<script>
+	function changeH(path) {
+        THistory.push({'name': 'humengtao'}, path)
+	}
+</script>
 
 </html>
