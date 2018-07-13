@@ -1,5 +1,7 @@
-var THistory = new TRouter({
-    mode: 'history',
+import TRouter from './core'
+
+const THistory = new TRouter({
+    type: 'history',
     routes: [{
         path: '/home',
         render: () => {
@@ -21,4 +23,6 @@ var THistory = new TRouter({
             console.log('render category')
         }
     }]
-}).history
+})
+
+console.log(THistory)
